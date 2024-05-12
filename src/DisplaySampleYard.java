@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class DisplaySampleYard extends JFrame {
+    // Charlie Wang ID: 1675918
     private final ArrayList<Yard> yardList; // array of yards
     private JPanel mainPanel; // panel to display yard data
     private int currIndex; // which yard the GUI is on
@@ -69,8 +70,8 @@ public class DisplaySampleYard extends JFrame {
         mainPanel.removeAll();
         PanelSampleYard panel = new PanelSampleYard(yardList.get(currIndex), currIndex==0);
         mainPanel.add(panel);
-        revalidate();
-        repaint();
+        revalidate(); // recalculate layout of components
+        repaint(); // guarantee repaint
     }
 
     private void showNextYard() {

@@ -1,6 +1,7 @@
 import java.util.Objects;
 
-public class CustomerSmallYard implements Yard{
+public class CustomerSmallYard implements Yard {
+    // Charlie Wang ID: 1675918
     private final String lastName;
     private final String firstName;
     private final int size;
@@ -16,6 +17,7 @@ public class CustomerSmallYard implements Yard{
         this.gardenSize = gardenSize;
         this.doubleDriveway = doubleDriveway;
     }
+
     @Override
     public double getCost() {
         double baseFee = 0.005*(size-gardenSize);
@@ -57,7 +59,11 @@ public class CustomerSmallYard implements Yard{
 
     @Override
     public String toString() {
-        return "Customer: " + getFirstName() + " " + getLastName() + ", Yard Size: " + getSize() + "\n";
+        return "Customer: " + getFirstName() + " " + getLastName() +
+                ", Yard Size: " + getSize() +
+                ", Number of Trees: " + getNumberTrees() +
+                ", Garden Size: " + getGardenSize() +
+                ", Double Driveway: " + getDoubleDriveway() + "\n";
     }
 
     @Override

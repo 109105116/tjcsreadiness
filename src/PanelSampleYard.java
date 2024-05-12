@@ -3,6 +3,7 @@ import java.awt.*;
 import java.text.DecimalFormat;
 
 public class PanelSampleYard extends JPanel {
+    // Charlie Wang ID: 1675918
     private final Yard yard; // the currently displayed yard
     private static double runningCost = 0; // running total of revenue
     private static final DecimalFormat df = new DecimalFormat("0.00"); // ensure money format (2 decimals)
@@ -10,13 +11,13 @@ public class PanelSampleYard extends JPanel {
     public PanelSampleYard(Yard yard, boolean atFinalIndex) {
         this.yard = yard;
         if (atFinalIndex) runningCost = 0; // reset the running total when looping around
-        initializePanel();
-        displayYardInformation();
+        initializePanel(); // create empty JPanel
+        displayYardInformation(); // add Yard info to JPanel
     }
 
     private void initializePanel() {
         setLayout(new GridLayout(8, 2));
-        setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
+        setBorder(BorderFactory.createEmptyBorder(30, 10, 30, 10));
     }
 
     private void displayYardInformation() {
@@ -31,10 +32,15 @@ public class PanelSampleYard extends JPanel {
     }
 
     private void addLabel(String labelText, String valueText) {
-        // create a row entry in the table
+        // create a single row entry in the table
         JLabel label = new JLabel(labelText);
         JTextField value = new JTextField(valueText);
+        Font font = new Font("Arial", Font.BOLD, 16);
+        label.setFont(font);
+        value.setFont(font);
+        value.setHorizontalAlignment(SwingConstants.RIGHT);
         value.setEditable(false);
+        value.setBackground(UIManager.getColor("TextField.background"));
         add(label);
         add(value);
     }

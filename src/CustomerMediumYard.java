@@ -1,6 +1,7 @@
 import java.util.Objects;
 
 public class CustomerMediumYard implements Yard{
+    // Charlie Wang ID: 1675918
     private final String lastName;
     private final String firstName;
     private final int size;
@@ -16,9 +17,10 @@ public class CustomerMediumYard implements Yard{
         this.gardenSize = gardenSize;
         this.doubleDriveway = doubleDriveway;
     }
+
     @Override
     public double getCost() {
-        double baseFee = 0.005*(size-gardenSize);
+        double baseFee = 0.004*(size-gardenSize);
         double treeFee = (numberTrees%2 != 0 ? 0.05 : 0)*baseFee;
         double doubleDrivewayDiscount = (Objects.equals(doubleDriveway, "yes") ? -0.03 : 0)*baseFee;
         double gardenFee = (gardenSize>0 ? 10 : 0);
@@ -57,7 +59,11 @@ public class CustomerMediumYard implements Yard{
 
     @Override
     public String toString() {
-        return "Customer: " + getFirstName() + " " + getLastName() + ", Yard Size: " + getSize() + "\n";
+        return "Customer: " + getFirstName() + " " + getLastName() +
+                ", Yard Size: " + getSize() +
+                ", Number of Trees: " + getNumberTrees() +
+                ", Garden Size: " + getGardenSize() +
+                ", Double Driveway: " + getDoubleDriveway() + "\n";
     }
 
     @Override
